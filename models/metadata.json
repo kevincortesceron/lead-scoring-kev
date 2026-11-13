@@ -1,0 +1,104 @@
+{
+  "model_name": "XGBoost (tuned)",
+  "trained_at": "2026-11-12T20:15:27",
+  "n_train_rows": 9240,
+  "conversion_rate": 0.3853896103896104,
+  "optimal_threshold": 0.3337026536464691,
+  "metrics": [
+    {
+      "Modelo": "XGBoost (tuned)",
+      "ROC-AUC CV (media)": 0.9072,
+      "ROC-AUC CV (desv.)": 0.0027,
+      "ROC-AUC Test": 0.8902,
+      "PR-AUC Test": 0.8346,
+      "F1 Test (umbral 0.5)": 0.773,
+      "Tiempo (s)": 1.6
+    },
+    {
+      "Modelo": "Gradient Boosting",
+      "ROC-AUC CV (media)": 0.9053,
+      "ROC-AUC CV (desv.)": 0.0027,
+      "ROC-AUC Test": 0.8904,
+      "PR-AUC Test": 0.8325,
+      "F1 Test (umbral 0.5)": 0.7668,
+      "Tiempo (s)": 11.8
+    },
+    {
+      "Modelo": "Red Neuronal (MLP)",
+      "ROC-AUC CV (media)": 0.9034,
+      "ROC-AUC CV (desv.)": 0.0032,
+      "ROC-AUC Test": 0.8777,
+      "PR-AUC Test": 0.8131,
+      "F1 Test (umbral 0.5)": 0.7417,
+      "Tiempo (s)": 2.0
+    },
+    {
+      "Modelo": "Regresión Logística",
+      "ROC-AUC CV (media)": 0.8997,
+      "ROC-AUC CV (desv.)": 0.0039,
+      "ROC-AUC Test": 0.8779,
+      "PR-AUC Test": 0.8148,
+      "F1 Test (umbral 0.5)": 0.7352,
+      "Tiempo (s)": 0.6
+    }
+  ],
+  "oof_roc_auc": 0.9049805075122933,
+  "tiers": [
+    {
+      "min_score": 70,
+      "tier": "Caliente",
+      "action": "Llamar hoy: asignar a un asesor senior"
+    },
+    {
+      "min_score": 40,
+      "tier": "Tibio",
+      "action": "Contactar esta semana: llamada + email personalizado"
+    },
+    {
+      "min_score": 0,
+      "tier": "Frío",
+      "action": "Nurturing automático: secuencia de emails / SMS"
+    }
+  ],
+  "feature_importance": {
+    "Lead Source_Reference": 0.13330000638961792,
+    "Lead Origin_Lead Add Form": 0.11469999700784683,
+    "What is your current occupation_Desconocido": 0.05849999934434891,
+    "Last Activity_SMS Sent": 0.053599998354911804,
+    "occupation_missing": 0.049800001084804535,
+    "Total Time Spent on Website": 0.047200001776218414,
+    "no_activity_visit": 0.04270000010728836,
+    "is_working_professional": 0.03840000182390213,
+    "log_time_on_site": 0.03669999912381172,
+    "What is your current occupation_Working Professional": 0.030700000002980232,
+    "Last Activity_Olark Chat Conversation": 0.020600000396370888,
+    "do_not_email": 0.01720000058412552,
+    "high_intent_activity": 0.01590000092983246,
+    "Lead Source_Welingak Website": 0.014800000004470348,
+    "Last Activity_Email Opened": 0.012799999676644802,
+    "TotalVisits": 0.012600000016391277,
+    "Last Activity_Converted to Lead": 0.010999999940395355,
+    "Lead Source_Olark Chat": 0.010900000110268593,
+    "Last Activity_infrequent_sklearn": 0.010300000198185444,
+    "time_per_visit": 0.010099999606609344
+  },
+  "input_fields": [
+    "Lead Origin",
+    "Lead Source",
+    "Do Not Email",
+    "TotalVisits",
+    "Total Time Spent on Website",
+    "Page Views Per Visit",
+    "Last Activity",
+    "Country",
+    "Specialization",
+    "What is your current occupation",
+    "City",
+    "A free copy of Mastering The Interview"
+  ],
+  "versions": {
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "pandas": "3.0.5"
+  }
+}

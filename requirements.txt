@@ -1,0 +1,10 @@
+# Versiones fijadas: deben coincidir con las usadas al entrenar el modelo (ver models/metadata.json)
+scikit-learn==1.9.1
+xgboost==3.4.1
+pandas>=2.2
+numpy
+joblib==1.6.0
+fastapi==0.162.5
+uvicorn==0.54.0
+streamlit==1.67.0
+plotly==7.1.0
